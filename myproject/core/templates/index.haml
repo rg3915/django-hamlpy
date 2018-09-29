@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+.container
+  %h1#title.title Django HamlPy
+
+  %img{'src': '{% static "img/haml01.png" %}'}
+
+  %ul#names
+    - for name in names
+      %li= name.name
+
+  %hr
+
+  %h1.title Python Mode
+  :python
+    print("<ul>")
+    for i in range(5):
+        print("<li id='item{}'>Item {}</li>".format(i,str(i).zfill(3)))
+    print("</ul>")
+
+  %hr
+
+  %h1.title Fibonacci
+  :python
+      def fibonacci(n):
+          a, b = 0, 1
+          for i in range(n):
+              a, b = b, a+b
+          return a
+      for x in range(10):
+          print('%s, ' % fibonacci(x))
+
+%footer.footer
+  .content.has-text-centered
+    %p
+      Django HamlPy on #ComDevShow 2018 by @rg3915
+
+{% endblock content %}

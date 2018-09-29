@@ -48,7 +48,7 @@ TEMPLATES = [
 ]
 ```
 
-E veja [index.html](myproject/core/templates/index.html)
+E veja [index.haml](https://github.com/rg3915/django-hamlpy/blob/master/myproject/core/templates/index.haml)
 
 
 ## Para rodar este projeto
